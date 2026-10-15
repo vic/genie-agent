@@ -46,6 +46,9 @@ commit. Revert shared history forward-only, never force-push.
 - A memory asserting that a mechanism is ABSENT (for example "the commit hook is inert")
   expires silently. One hook went inert, then fired the full suite, then was installed
   without its config. Run the commit and read the error.
-- Read CI after every push and prove publication (\[[ci-gate-discipline]\]).
+- Read CI after every push and prove publication (\[[ci-gate-discipline]\]). If main goes red from
+  your commit, you own it, not the next agent: diagnose it (\[[debug-before-revert]\]), then fix
+  forward or revert forward, and report. A red main blocks every other landing onto that main until it
+  is green again.
 
 Related: \[[one-writer-per-checkout]\] \[[format-before-commit]\] \[[ci-gate-discipline]\]
